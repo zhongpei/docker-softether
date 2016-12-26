@@ -1,11 +1,11 @@
 # SoftEther VPN server
 
 FROM debian:8
-MAINTAINER Frank Rosquin <frank.rosquin@gmail.com>
+MAINTAINER zhong pei <zhongpei@vip.qq.com>
 
-ENV VERSION v4.15-9546-beta-2015.04.05
+#ENV VERSION v4.15-9546-beta-2015.04.05
+ENV VERSION v4.20-9608-rtm-2016.04.17
 WORKDIR /usr/local/vpnserver
-
 
 RUN apt-get update &&\
         apt-get -y -q install gcc make wget && \
