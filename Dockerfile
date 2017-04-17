@@ -3,12 +3,13 @@
 FROM debian:8
 MAINTAINER zhong pei <zhongpei@vip.qq.com>
 
-#ENV VERSION v4.15-9546-beta-2015.04.05
 ENV VERSION v4.20-9608-rtm-2016.04.17
 WORKDIR /usr/local/vpnserver
 
 RUN apt-get update &&\
-        apt-get -y -q install gcc make wget && \
+        apt-get -y -q install gcc make wget python python-pip pppoe git supervisor psmisc iputils-ping && \
+		apt-get install -y -q net-tools pppoeconf && \
+		apt-get install -y -q rsyslog && \
         apt-get clean && \
         rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
         wget http://www.softether-download.com/files/softether/${VERSION}-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-${VERSION}-linux-x64-64bit.tar.gz -O /tmp/softether-vpnserver.tar.gz &&\
